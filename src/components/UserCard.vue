@@ -10,24 +10,23 @@
 
 <body>
     <div class="user-card">
-        <img src="../assets/70.jpg" class="user-photo">
-        <p class="user-nickname">romashka</p>
+        <img img :src=userData.photoUrl class="user-photo">
+        <p class="user-nickname">{{userData.userNickname}}</p>
         <p class="user-name">
-            Иванов Иван<br>
-            Иванович
+            {{userData.userFIO}}
         </p>
         <hr>
         <p class="user-info-item">
             <img src="../assets/location.png">
-            Москва, Юбилейная 50
+            {{userData.userAdress}}
         </p>
         <p class="user-info-item">
             <img src="../assets/mail.png">
-            coldrabbit48@example.com
+            {{userData.userEmail}}
         </p>
         <p class="user-info-item">
             <img src="../assets/phone.png">
-            +7-495-266-57-34
+            {{userData.userPhone}}
         </p>
     </div>
 </body>
@@ -37,9 +36,11 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'UserCard',
   props: {
-    msg: String
+    userData:{
+        type:Object
+    }
   }
 }
 </script>
